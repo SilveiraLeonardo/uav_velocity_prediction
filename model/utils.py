@@ -7,7 +7,7 @@ import cv2
 
 class Custom_Generator(keras.utils.Sequence):
 
-    def __init__(self, image_paths, labels, batch_size, rMean, gMean, bMean, image_size=480):
+    def __init__(self, image_paths, labels, batch_size, rMean, gMean, bMean, image_size=240):
         self.image_paths = image_paths
         self.labels = labels
         self.batch_size = batch_size
