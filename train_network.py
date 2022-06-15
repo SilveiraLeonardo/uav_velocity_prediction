@@ -8,6 +8,7 @@ from model.siamese_network import build_siamese_model
 from model.trainingMonitor import TrainingMonitor
 from model.hdf5datasetgenerator import HDF5DatasetGenerator
 from tensorflow.keras.layers import Dense
+from tensorflow.keras.models import Model
 from tensorflow.keras.layers import Input
 from tensorflow.keras.layers import Conv2D
 from tensorflow.keras.layers import Dense
@@ -91,7 +92,7 @@ mcp = ModelCheckpoint(filepath=ckp_path,
 callbacks=[mcp, TrainingMonitor(FIG_PATH)]
 
 print("[INFO] compiling model...")
-model.compile(optimizer="adam", loss=MeanSquaredError(), metrics=["accuracy"])
+model.compile(loss= "mean_squared_error" , optimizer="adam", metrics=["mean_squared_error"])
 
 print("[INFO] training model...")
 model.fit(
