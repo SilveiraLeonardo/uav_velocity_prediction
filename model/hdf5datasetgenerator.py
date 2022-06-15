@@ -20,7 +20,7 @@ class HDF5DatasetGenerator:
                 images1 = images1.astype("float")/255.0
                 images2 = images2.astype("float")/255.0
 
-                yield (np.array([images1, images2]), labels)
+                yield ([images1, images2], labels.astype("float")) #[pairTrain[:,0], pairTrain[:,1]], labelTrain[:]
             
             epochs += 1
     
